@@ -1,0 +1,558 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>APL</title>
+    <link rel="icon" type="image/x-icon" href="./images/APL_LOGO1.png">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- FontAwesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+      .bg-light-blue {
+  background-color: #e6f2ff;
+}
+
+.card.bg-light-blue {
+  width: 100%;
+  border: 1px solid #b8daff;
+}
+
+.card.bg-light-blue .form-select {
+  background-color: white;
+  color: #0056b3;
+  border: 1px solid #b8daff;
+}
+
+.card.bg-light-blue .form-select:focus {
+  border-color: #80bdff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.table-blue {
+  background-color: #001f3f;
+  color: white;
+}
+
+.table-blue th {
+  border-color: #001f3f;
+}
+
+/* New styles for increasing row height */
+.table {
+  width: 100%;
+  max-width: none;
+}
+
+.table th, .table td {
+  padding: 18px,10px;
+ /* padding: 1rem;   Increase padding */
+  vertical-align: middle; /* Center content vertically */
+  font-size: 1.1rem;     /* Slightly larger font size */
+}
+
+.table th {
+  font-size: 1.2rem; /* Even larger font for headers */
+}
+
+.team-logo {
+  width: 40px; /* Increased logo size */
+  height: 40px;
+  margin-right: 15px;
+}
+
+.team-name {
+  display: flex;
+  align-items: center;
+  font-weight: bold; /* Make team names bold */
+}
+
+.recent-form {
+  display: flex;
+  justify-content: center;
+}
+
+.form-indicator {
+  width: 25px; /* Slightly larger indicators */
+  height: 25px;
+  margin: 0 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.win { background-color: #28a745; } /* Bootstrap's success color */
+.loss { background-color: #dc3545; } /* Bootstrap's danger color */
+
+@media (max-width: 767px) {
+  .col-md-3 {
+      width: 50%;
+      margin-left: auto;
+      margin-right: auto;
+  }
+
+  .table th, .table td {
+      padding: 0.75rem; /* Slightly less padding on mobile */
+      font-size: 1rem; /* Smaller font on mobile */
+  }
+}
+
+.table-responsive {
+  margin-left: -20px;
+  margin-right: -20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+    </style>
+  </head>
+  <body>
+    <div class="container-fluids">
+        <!-- TopHeader -->
+        <div class="container-fluids uppernavbar d-none d-md-block">
+          <div class="row">
+            <div class="col-4">
+              <div class="row">
+                  <div class="col-12 mt-2 mb-1 d-flex align-items-center">
+                     <a href="https://arunachalcricket.in/"><img src="./images/organiserlogo.jpg" alt="" class="img-fluid max-height1 rounded-circle ms-5"></a> 
+                      <div class="vertical-line mx-1"></div>
+                       <a href=""><img src="./images/APL_LOGO1.png" alt="" class="img-fluid max-height  ms-2"></a>
+                  </div>
+              </div>
+          </div>
+              <div class="col-8 mt-3">
+                <div class="d-flex justify-content-end align-items-center social-media-icons pe-3">
+                    <span class="ms-3 p-3">
+                        <b class="text-white">Follow Us</b>
+                    </span>
+                    <span class="ms-3 p-2">
+                        <a href="https://www.facebook.com/" target="_blank">
+                            <i class="fab fa-facebook iconsfb"></i>
+                        </a>
+                    </span>
+                    <span class="ms-3">
+                        <a href="https://www.linkedin.com/company/sportkavach/" target="_blank">
+                            <i class="fa-brands fa-square-instagram"></i>
+                        </a>
+                    </span>
+                    <span class="ms-3">
+                        <a href="https://twitter.com/" target="_blank">
+                            <i class="fa-brands fa-square-twitter"></i>
+                        </a>
+                    </span>
+                    <span class="ms-3">
+                        <a href="https://www.google.com/" target="_blank">
+                            <i class="fa-brands fa-square-youtube"></i>
+                        </a>
+                    </span>
+                </div>
+            </div>
+            
+            
+          </div>
+      </div>
+        <!-- Top Header For Mobile View -->
+        <div class="container-fluids uppernavbar d-md-none">
+          <div class="row">
+              <div class="col-12">
+                  <div class="d-flex justify-content-center align-items-center social-media-icons">
+                      <span class="ms-3 p-3">
+                          <b class="text-white">Follow Us At</b>
+                      </span>
+                      <span class="ms-3 p-2">
+                          <a href="https://www.facebook.com/" target="_blank">
+                              <i class="fab fa-facebook iconsfb"></i>
+                          </a>
+                      </span>
+                      <span class="ms-3">
+                          <a href="https://www.linkedin.com/company/sportkavach/" target="_blank">
+                              <i class="fa-brands fa-square-instagram"></i>
+                          </a>
+                      </span>
+                      <span class="ms-3">
+                          <a href="https://twitter.com/" target="_blank">
+                              <i class="fa-brands fa-square-twitter"></i>
+                          </a>
+                      </span>
+                      <span class="ms-3">
+                          <a href="https://www.google.com/" target="_blank">
+                              <i class="fa-brands fa-square-youtube"></i>
+                          </a>
+                      </span>
+                  </div>
+              </div>
+          </div>
+        </div>
+        <!-- Bottom Navbar -->
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-white bg-white">
+              <a class="navbar-brand" href="./index.html">
+                <img src="./images/APL_LOGO1.png" alt="Logo" class="logo img-fluid w-50 h-20" />
+              </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-stream manueIcon" id="manuIcon"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item ">
+                            <a class="nav-link" href="./index.html">HOME</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="./about.html">ABOUT US</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./gallery.html">GALLERY </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./team.html">TEAM</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./news.html">NEWS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./contact.html">CONTACT US</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="./fixture.html">FIXTURES</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="./scoreboard.html">SCOREBOARD</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="container-fluid mt-5">
+          <div class="row mb-3">
+            <div class="col-md-3 col-lg-2">
+              <div class="card bg-light-blue text-dark">
+                <div class="card-body p-2">
+                  <select id="seasonSelect" class="form-select form-select-sm">
+                    <option value="2023">APL 2023</option>
+                    <option value="2024" selected>APL 2024</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="table-responsive">
+            <table class="table table-striped table-hover table-bordered">
+              <thead class="table-blue">
+                <tr>
+                  <th>POS</th>
+                  <th>TEAM</th>
+                  <th>P</th>
+                  <th>W</th>
+                  <th>L</th>
+                  <th>NR</th>
+                  <th>NRR</th>
+                  <th>PTS</th>
+                  <th>RECENT FORM</th>
+                </tr>
+              </thead>
+              <tbody id="pointsTableBody">
+                <!-- Table rows will be populated by JavaScript  -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+        
+        <!-- footer -->
+        <div class="container-fluids">
+          <div class="container-fluids footer">
+            <div class="container-fluids ">
+              <div class="d-flex justify-content-center align-items-center">
+                <img src="./images/organiserlogo.jpg" alt="Logo" class="logo img-fluid rounded-circle mt-2 me-3 max-height2" />
+                <div class="vertical-line mx-1"></div>
+                <img src="./images/APL_LOGO.png" alt="Logo" class="logo img-fluid me-3 mt-2" />
+              </div>
+            </div>
+            <div class="d-flex justify-content-center align-items-center social-media-icons m-4">
+              <span class="ms-3 p-2">
+                <a href="https://www.facebook.com/" target="_blank">
+                  <i class="fab fa-facebook iconsfb"></i>
+                </a>
+              </span>
+              <span class="ms-3">
+                <a href="https://www.linkedin.com/company/sportkavach/" target="_blank">
+                  <i class="fa-brands fa-square-instagram"></i>
+                </a>
+              </span>
+              <span class="ms-3">
+                <a href="https://twitter.com/" target="_blank">
+                  <i class="fa-brands fa-square-twitter"></i>
+                </a>
+              </span>
+              <span class="ms-3">
+                <a href="https://www.google.com/" target="_blank">
+                  <i class="fa-brands fa-square-youtube"></i>
+                </a>
+              </span>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <h1>QUICKLINKS</h1>
+                <div class="container">
+                  <ul>
+                    <li><a href="./index.html"><span class="px-2">&#x2B9E;</span>HOME</a></li>
+                    <li><a href="./about.html"><span class="px-2">&#x2B9E;</span>ABOUT US</a></li>
+                    <li><a href="./patner.html"><span class="px-2">&#x2B9E;</span>GALLERY</a></li>
+                    <li><a href="./earn.html"><span class="px-2">&#x2B9E;</span>TEAM</a></li>
+                    <li><a href="./faqs.html"><span class="px-2">&#x2B9E;</span>NEWS</a></li>
+                    <li><a href="./contact.html"><span class="px-2">&#x2B9E;</span>CONTACT US</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <h1>TEAMS</h1>
+                <div class="container">
+                  <ul>
+                    <li><a href="./index.html"><span class="px-2">&#x2B9E;</span>Dirang Dragens</a></li>
+                    <li><a href="./about.html"><span class="px-2">&#x2B9E;</span>Kamle Cobras</a></li>
+                    <li><a href="./patner.html"><span class="px-2">&#x2B9E;</span>Pare Warriors</a></li>
+                    <li><a href="./earn.html"><span class="px-2">&#x2B9E;</span>Siang</a></li>
+                    <li><a href="./faqs.html"><span class="px-2">&#x2B9E;</span>Tigers</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <h1>ABOUT US</h1>
+                <br>
+                <div class="container">
+                  <p>Season 02 of APL, 'The Reboot Edition,' elevates Arunachal cricket, offering players a platform for BCCI Domestic Season selection.</p>
+                  <br>
+                  <p>Rebooted APL Season 02: Advancing Arunachal cricket, targeting BCCI selection</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <!-- Bottom Footer -->
+          <div class="container-fluid bottomfooter mb-1">
+            <span class="custom-bold text-center d-block" style="font-size: 1.5rem;">@&nbsp;2024Aplt20.live&nbsp; All Rights Reserved</span>
+          </div>
+      </div>   
+    </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <script>
+      var menuIcon = document.getElementById('manuIcon');
+
+      menuIcon.addEventListener('click', function() {
+        // Toggle between the menu icon and the cross icon
+        if (menuIcon.classList.contains('fa-stream')) {
+          menuIcon.classList.remove('fa-stream');
+          menuIcon.classList.add('fa-times');
+        } else {
+          menuIcon.classList.remove('fa-times');
+          menuIcon.classList.add('fa-stream');
+        }
+      });
+
+      const teamsData2023 = [
+    {
+      position: 1,
+      name: "Kamle Cobras",
+      logo: "./images/kamle_cobras-removebg.png",
+      played: 4,
+      won: 4,
+      lost: 0,
+      noResult: 0,
+      nrr: 1.768,
+      points: 8,
+      recentForm: ["W", "W", "W", "W"],
+    },
+    {
+      position: 2,
+      name: "Pare Warriors",
+      logo: "./images/pare_warriors-removebg.png",
+      played: 4,
+      won: 2,
+      lost: 2,
+      noResult: 0,
+      nrr: 1.552,
+      points: 4,
+      recentForm: ["L", "W", "L", "W"],
+    },
+    {
+      position: 3,
+      name: "Kameng Strikes",
+      logo: "./images/kameng_strikes-removebg.png",
+      played: 4,
+      won: 2,
+      lost: 2,
+      noResult: 0,
+      nrr: -0.248,
+      points: 4,
+      recentForm: ["L", "W", "W", "L"],
+    },
+    {
+      position: 4,
+      name: "Siang Sharks",
+      logo: "./images/siang_sharks-removebg.png",
+      played: 4,
+      won: 1,
+      lost: 2,
+      noResult: 0,
+      nrr: -1.686,
+      points: 3,
+      recentForm: ["W", "L", "L"],
+    },
+    {
+      position: 5,
+      name: "Tawang Tigers",
+      logo: "./images/tawang new.png",
+      played: 4,
+      won: 0,
+      lost: 3,
+      noResult: 0,
+      nrr: -2.154,
+      points: 1,
+      recentForm: ["L", "L", "L"],
+    }
+  ];
+
+  const teamsData2024 = [
+    {
+      position: 1,
+      name: "Kamle Cobras",
+      logo: "./images/kamle_cobras-removebg.png",
+      played: 0,
+      won: 0,
+      lost: 0,
+      noResult: 0,
+      nrr: 0,
+      points: 0,
+      recentForm: ["N", "N", "N", "N"],
+    },
+    {
+      position: 2,
+      name: "Pare Warriors",
+      logo: "./images/pare_warriors-removebg.png",
+      played: 0,
+      won: 0,
+      lost: 0,
+      noResult: 0,
+      nrr: 0,
+      points: 0,
+      recentForm: ["N", "N", "N", "N"],
+    },
+    {
+      position: 3,
+      name: "Kameng Strikes",
+      logo: "./images/kameng_strikes-removebg.png",
+      played: 0,
+      won: 0,
+      lost: 0,
+      noResult: 0,
+      nrr: 0,
+      points: 0,
+      recentForm: ["N", "N", "N", "N"],
+    },
+    {
+      position: 4,
+      name: "Siang Sharks",
+      logo: "./images/siang_sharks-removebg.png",
+      played: 0,
+      won: 0,
+      lost: 0,
+      noResult: 0,
+      nrr: 0,
+      points: 0,
+      recentForm: ["N", "N", "N", "N"],
+    },
+    {
+      position: 5,
+      name: "Tawang Tigers",
+      logo: "./images/tawang new.png",
+      played: 0,
+      won: 0,
+      lost: 0,
+      noResult: 0,
+      nrr: 0,
+      points: 0,
+      recentForm: ["N", "N", "N", "N"],
+    },
+    {
+      position: 6,
+      name: "Dirang Dragons",
+      logo: "./images/Dirang_dragons_remove bg.png",
+      played: 0,
+      won: 0,
+      lost: 0,
+      noResult: 0,
+      nrr: 0,
+      points: 0,
+      recentForm: ["N", "N", "N", "N"],
+    },
+  ];
+
+  function populateTable(teamsData) {
+    const tableBody = document.getElementById("pointsTableBody");
+    tableBody.innerHTML = "";
+
+    teamsData.forEach((team) => {
+      const row = document.createElement("tr");
+      row.innerHTML = `
+        <td>${team.position}</td>
+        <td class="team-name">
+          <img src="${team.logo}" alt="${team.name}" class="team-logo">
+          ${team.name}
+        </td>
+        <td>${team.played}</td>
+        <td>${team.won}</td>
+        <td>${team.lost}</td>
+        <td>${team.noResult}</td>
+        <td>${team.nrr.toFixed(3)}</td>
+        <td>${team.points}</td>
+        <td>
+          <div class="recent-form">
+            ${team.recentForm
+              .map(
+                (result) => `
+                  <span class="form-indicator ${
+                    result === "W" ? "win" : result === "L" ? "loss" : "neutral"
+                  }">${result}</span>
+                `
+              )
+              .join("")}
+          </div>
+        </td>
+      `;
+      tableBody.appendChild(row);
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const seasonSelect = document.getElementById("seasonSelect");
+    seasonSelect.addEventListener("change", function () {
+      if (seasonSelect.value === "2023") {
+        populateTable(teamsData2023);
+      } else if (seasonSelect.value === "2024") {
+        populateTable(teamsData2024);
+      }
+    });
+
+    // Initial population with the selected season data
+    if (seasonSelect.value === "2023") {
+      populateTable(teamsData2023);
+    } else {
+      populateTable(teamsData2024);
+    }
+  });
+    </script>
+  </body>
+</html>

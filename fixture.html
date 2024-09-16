@@ -1,0 +1,965 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>APL</title>
+    <link rel="icon" type="image/x-icon" href="./images/APL_LOGO1.png">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- FontAwesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+      .banner {
+                 position: relative;
+                 width: 100%;
+                 height: 400px; /* Adjust height as needed */
+                 background-image: url('./images/fixture\ banner.jpg'); /* Replace with your banner image */
+                 background-size: cover;
+                 background-position: center;
+                 color: white;
+                 text-align: center;
+                 display: flex;
+                 align-items: center;
+                 justify-content: center;
+                 border-radius: 0 0 15px 15px;
+                 box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+             }
+             .banner-content {
+                 position: absolute;
+                 top: 50%;
+                 left: 50%;
+                 transform: translate(-50%, -50%);
+                 padding: 20px;
+                 background: rgba(0, 0, 0, 0.5); /* Dark background for better text visibility */
+                 border-radius: 10px;
+             }
+             .banner h1 {
+                 font-size: 36px; /* Adjust font size as needed */
+                 margin: 0;
+                 font-weight: bold;
+             }
+             .banner p {
+                 font-size: 18px; /* Adjust font size as needed */
+                 margin: 10px 0 0;
+             }
+     
+     
+     
+     
+             .card {
+                 margin: 10px;
+                 flex: 1; 
+                 box-sizing: border-box;
+                 border-radius: 15px;
+                 box-shadow: 2px 4px 8px rgba(0,0,0,0.1);
+                 height: 180px; /* Increase the height of the total card */
+             }
+             .card-header {
+                 background-color: #100949;
+                 color: white;
+                 border-top-left-radius: 15px;
+                 border-top-right-radius: 15px;
+                 text-align: center;
+                 padding: 10px;
+             }
+             .team-logo, .main-logo {
+                 width: 120px; /* Increase size as needed */
+                 height: 120px; /* Increase size as needed */
+             }
+             .info {
+                 display: flex;
+                 align-items: center;
+             }
+             .vs-text {
+                 font-size: 18px; /* Decreased font size for text */
+                 font-weight: bold;
+                 margin: 0 15px; /* Adjusted margin */
+             }
+             .vs-icon {
+                 width: 80px; /* Decreased size */
+                 height: 80px; /* Decreased size */
+             }
+             .card-body {
+                 text-align: center;
+                 padding: 10px; /* Decrease padding */
+             }
+             .score {
+                 font-size: 24px; /* Increase score font size */
+                 font-weight: bold;
+                 margin-left: 10px;
+             }
+             .score-container {
+                 display: flex;
+                 align-items: center;
+                 margin: 0 15px; /* Increased margin */
+             }
+             .vs-container {
+                 display: flex;
+                 align-items: center;
+                 justify-content: center;
+                 flex-grow: 1;
+             }
+             .container {
+                 max-width: 80%;
+                 display: flex;
+                 margin: 10px,10px,10px ;
+             }
+             @media (max-width: 1200px) {
+                 .card {
+                     flex: 1 0 28%; /* 3 cards per row for medium screens */
+                 }
+             }
+             @media (max-width: 992px) {
+                 .card {
+                     flex: 1 0 45%; /* 2 cards per row for smaller screens */
+                 }
+             }
+             @media (max-width: 768px) {
+                 .card {
+                     flex: 1 0 100%; /* 1 card per row for even smaller screens */
+                 }
+             }
+    </style>
+     
+  </head>
+  <body>
+    <div class="container-fluids">
+        <!-- TopHeader -->
+        <div class="container-fluids uppernavbar d-none d-md-block">
+          <div class="row">
+            <div class="col-4">
+              <div class="row">
+                  <div class="col-12 mt-2 mb-1 d-flex align-items-center">
+                     <a href="https://arunachalcricket.in/"><img src="./images/organiserlogo.jpg" alt="" class="img-fluid max-height1 rounded-circle ms-5"></a> 
+                      <div class="vertical-line mx-1"></div>
+                       <a href=""><img src="./images/APL_LOGO1.png" alt="" class="img-fluid max-height  ms-2"></a>
+                  </div>
+              </div>
+          </div>
+              <div class="col-8 mt-3">
+                <div class="d-flex justify-content-end align-items-center social-media-icons pe-3">
+                    <span class="ms-3 p-3">
+                        <b class="text-white">Follow Us</b>
+                    </span>
+                    <span class="ms-3 p-2">
+                        <a href="https://www.facebook.com/" target="_blank">
+                            <i class="fab fa-facebook iconsfb"></i>
+                        </a>
+                    </span>
+                    <span class="ms-3">
+                        <a href="https://www.linkedin.com/company/sportkavach/" target="_blank">
+                            <i class="fa-brands fa-square-instagram"></i>
+                        </a>
+                    </span>
+                    <span class="ms-3">
+                        <a href="https://twitter.com/" target="_blank">
+                            <i class="fa-brands fa-square-twitter"></i>
+                        </a>
+                    </span>
+                    <span class="ms-3">
+                        <a href="https://www.google.com/" target="_blank">
+                            <i class="fa-brands fa-square-youtube"></i>
+                        </a>
+                    </span>
+                </div>
+            </div>
+            
+            
+          </div>
+        </div>
+        <!-- Top Header For Mobile View -->
+        <div class="container-fluids uppernavbar d-md-none">
+          <div class="row">
+              <div class="col-12">
+                  <div class="d-flex justify-content-center align-items-center social-media-icons">
+                      <span class="ms-3 p-3">
+                          <b class="text-white">Follow Us At</b>
+                      </span>
+                      <span class="ms-3 p-2">
+                          <a href="https://www.facebook.com/" target="_blank">
+                              <i class="fab fa-facebook iconsfb"></i>
+                          </a>
+                      </span>
+                      <span class="ms-3">
+                          <a href="https://www.linkedin.com/company/sportkavach/" target="_blank">
+                              <i class="fa-brands fa-square-instagram"></i>
+                          </a>
+                      </span>
+                      <span class="ms-3">
+                          <a href="https://twitter.com/" target="_blank">
+                              <i class="fa-brands fa-square-twitter"></i>
+                          </a>
+                      </span>
+                      <span class="ms-3">
+                          <a href="https://www.google.com/" target="_blank">
+                              <i class="fa-brands fa-square-youtube"></i>
+                          </a>
+                      </span>
+                  </div>
+              </div>
+          </div>
+        </div>
+        <!-- Bottom Navbar -->
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-white bg-white">
+              <a class="navbar-brand" href="./index.html">
+                <img src="./images/APL_LOGO1.png" alt="Logo" class="logo img-fluid w-50 h-20" />
+              </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-stream manueIcon" id="manuIcon"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item ">
+                            <a class="nav-link" href="./index.html">HOME</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="./about.html">ABOUT US</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./gallery.html">GALLERY </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./team.html">TEAM</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./news.html">NEWS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./contact.html">CONTACT US</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="./fixture.html">FIXTURES</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="./scoreboard.html">SCOREBOARD</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+       <!--Banner area-->
+     <div class="banner">
+      
+     </div>
+
+     <div class="container mt-12">
+        <div class="d-flex flex-wrap justify-content-between">
+            <!-- Example of one card -->
+            <!-- Repeat this block 18 times to create all cards -->
+            <div class="card">
+                <div class="card-header">
+                    <strong>1st Match (01 September, 2024)</strong>
+                </div>
+                <div class="card-body d-flex align-items-center">
+                    <div class="info">
+                        <img src="./images/APL_LOGO.png" alt="APL Logo" class="main-logo">
+                        <div class="ml-3 text-left">
+                            <p class="mb-0">Venue: Gaurs city stadium,Greater Noida</p>
+                            <p class="mb-0">Time: 2:00 PM</p>
+                        </div>
+                    </div>
+                        <div class="score-container">
+                            <p class="score">150/10</p>
+                            <img src="./images/kameng_strikes-removebg.png" alt="Team 1 Logo" class="team-logo">
+                        </div>
+                        <span class="vs-text">
+                            <img src="./images/vs bg renmove.png" alt="VS Icon" class="vs-icon">
+                        </span>
+                        <div class="score-container">
+                            <img src="./images/pare_warriors-removebg.png" alt="Team 2 Logo" class="team-logo">
+                            <p class="score">145/9</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            
+            
+            
+            <!-- Repeat the above block 17 more times -->
+            <!-- Example end -->
+        </div>
+      
+       <!--2nd Match-->
+       <div class="container mt-12">
+    <div class="d-flex flex-wrap justify-content-between">
+        <!-- Example of one card -->
+        <!-- Repeat this block 18 times to create all cards -->
+        <div class="card">
+            <div class="card-header">
+                <strong>2nd Match (01 September, 2024)</strong>
+            </div>
+            <div class="card-body d-flex align-items-center">
+                <div class="info">
+                    <img src="./images/APL_LOGO.png" alt="APL Logo" class="main-logo">
+                    <div class="ml-3 text-left">
+                        <p class="mb-0">Venue: Gaurs city stadium,Greater Noida</p>
+                        <p class="mb-0">Time: 07:00 PM</p>
+                    </div>
+                </div>
+                    <div class="score-container">
+                        <p class="score">150/10</p>
+                        <img src="./images/Dirang_dragons_remove bg.png" alt="Team 1 Logo" class="team-logo">
+                    </div>
+                    <span class="vs-text">
+                        <img src="./images/vs bg renmove.png" alt="VS Icon" class="vs-icon">
+                    </span>
+                    <div class="score-container">
+                        <img src="./images/kamle_cobras-removebg.png" alt="Team 2 Logo" class="team-logo">
+                        <p class="score">145/9</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+       </div>
+       <!--3rd Match-->
+        <div class="container mt-12">
+        <div class="d-flex flex-wrap justify-content-between">
+            <!-- Example of one card -->
+            <!-- Repeat this block 18 times to create all cards -->
+            <div class="card">
+                <div class="card-header">
+                    <strong>3rd Match (02 September, 2024)</strong>
+                </div>
+                <div class="card-body d-flex align-items-center">
+                    <div class="info">
+                        <img src="./images/APL_LOGO.png" alt="APL Logo" class="main-logo">
+                        <div class="ml-3 text-left">
+                            <p class="mb-0">Venue: Gaurs city stadium,Greater Noida</p>
+                            <p class="mb-0">Time: 2:00 PM</p>
+                        </div>
+                    </div>
+                        <div class="score-container">
+                            <p class="score">na/na</p>
+                            <img src="./images/tawang new.png" alt="Team 1 Logo" class="team-logo">
+                        </div>
+                        <span class="vs-text">
+                            <img src="./images/vs bg renmove.png" alt="VS Icon" class="vs-icon">
+                        </span>
+                        <div class="score-container">
+                            <img src="./images/siang_sharks-removebg.png" alt="Team 2 Logo" class="team-logo">
+                            <p class="score">na/na</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        
+        </div>
+  
+           <!--4th Match-->
+           <div class="container mt-12">
+            <div class="d-flex flex-wrap justify-content-between">
+                <!-- Example of one card -->
+                <!-- Repeat this block 18 times to create all cards -->
+                <div class="card">
+                    <div class="card-header">
+                        <strong>4th Match (02 September, 2024)</strong>
+                    </div>
+                    <div class="card-body d-flex align-items-center">
+                        <div class="info">
+                            <img src="./images/APL_LOGO.png" alt="APL Logo" class="main-logo">
+                            <div class="ml-3 text-left">
+                                <p class="mb-0">Venue: Gaurs city stadium,Greater Noida</p>
+                                <p class="mb-0">Time: 07:00 PM</p>
+                            </div>
+                        </div>
+                            <div class="score-container">
+                                <p class="score">na/na</p>
+                                <img src="./images/kameng_strikes-removebg.png" alt="Team 1 Logo" class="team-logo">
+                            </div>
+                            <span class="vs-text">
+                                <img src="./images/vs bg renmove.png" alt="VS Icon" class="vs-icon">
+                            </span>
+                            <div class="score-container">
+                                <img src="./images/Dirang_dragons_remove bg.png" alt="Team 2 Logo" class="team-logo">
+                                <p class="score">na/na</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <!--5th match-->
+            <div class="container mt-12">
+                <div class="d-flex flex-wrap justify-content-between">
+                    <!-- Example of one card -->
+                    <!-- Repeat this block 18 times to create all cards -->
+                    <div class="card">
+                        <div class="card-header">
+                            <strong>5th Match (03 September, 2024)</strong>
+                        </div>
+                        <div class="card-body d-flex align-items-center">
+                            <div class="info">
+                                <img src="./images/APL_LOGO.png" alt="APL Logo" class="main-logo">
+                                <div class="ml-3 text-left">
+                                    <p class="mb-0">Venue: Gaurs city stadium,Greater Noida</p>
+                                    <p class="mb-0">Time: 2:00 PM</p>
+                                </div>
+                            </div>
+                                <div class="score-container">
+                                    <p class="score">na/na</p>
+                                    <img src="./images/pare_warriors-removebg.png" alt="Team 1 Logo" class="team-logo">
+                                </div>
+                                <span class="vs-text">
+                                    <img src="./images/vs bg renmove.png" alt="VS Icon" class="vs-icon">
+                                </span>
+                                <div class="score-container">
+                                    <img src="./images/kamle_cobras-removebg.png" alt="Team 2 Logo" class="team-logo">
+                                    <p class="score">na/na</p>
+                                </div>
+                            </div>
+                        </div>
+                           </div>
+               </div>
+  
+               <!--6th matches -->
+               <div class="container mt-12">
+                <div class="d-flex flex-wrap justify-content-between">
+                    <!-- Example of one card -->
+                    <!-- Repeat this block 18 times to create all cards -->
+                    <div class="card">
+                        <div class="card-header">
+                            <strong>6th Match (03 September, 2024)</strong>
+                        </div>
+                        <div class="card-body d-flex align-items-center">
+                            <div class="info">
+                                <img src="./images/APL_LOGO.png" alt="APL Logo" class="main-logo">
+                                <div class="ml-3 text-left">
+                                    <p class="mb-0">Venue: Gaurs city stadium,Greater Noida</p>
+                                    <p class="mb-0">Time: 07:00 PM</p>
+                                </div>
+                            </div>
+                                <div class="score-container">
+                                    <p class="score">na/na</p>
+                                    <img src="./images/tawang new.png" alt="Team 1 Logo" class="team-logo">
+                                </div>
+                                <span class="vs-text">
+                                    <img src="./images/vs bg renmove.png" alt="VS Icon" class="vs-icon">
+                                </span>
+                                <div class="score-container">
+                                    <img src="./images/siang_sharks-removebg.png" alt="Team 2 Logo" class="team-logo">
+                                    <p class="score">na/na</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+      
+                </div>
+  
+                <!--7th match-->
+                <div class="container mt-12">
+                    <div class="d-flex flex-wrap justify-content-between">
+                        <!-- Example of one card -->
+                        <!-- Repeat this block 18 times to create all cards -->
+                        <div class="card">
+                            <div class="card-header">
+                                <strong>7th Match (04 September, 2024)</strong>
+                            </div>
+                            <div class="card-body d-flex align-items-center">
+                                <div class="info">
+                                    <img src="./images/APL_LOGO.png" alt="APL Logo" class="main-logo">
+                                    <div class="ml-3 text-left">
+                                        <p class="mb-0">Venue: Gaurs city stadium,Greater Noida</p>
+                                        <p class="mb-0">Time: 2:00 PM</p>
+                                    </div>
+                                </div>
+                                    <div class="score-container">
+                                        <p class="score">na/na</p>
+                                        <img src="./images/Dirang_dragons_remove bg.png" alt="Team 1 Logo" class="team-logo">
+                                    </div>
+                                    <span class="vs-text">
+                                        <img src="./images/vs bg renmove.png" alt="VS Icon" class="vs-icon">
+                                    </span>
+                                    <div class="score-container">
+                                        <img src="./images/siang_sharks-removebg.png" alt="Team 2 Logo" class="team-logo">
+                                        <p class="score">na/na</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+  
+                    <!---8th match -->
+                    <div class="container mt-12">
+                        <div class="d-flex flex-wrap justify-content-between">
+                            <!-- Example of one card -->
+                            <!-- Repeat this block 18 times to create all cards -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <strong>8th Match (04 September, 2024)</strong>
+                                </div>
+                                <div class="card-body d-flex align-items-center">
+                                    <div class="info">
+                                        <img src="./images/APL_LOGO.png" alt="APL Logo" class="main-logo">
+                                        <div class="ml-3 text-left">
+                                            <p class="mb-0">Venue: Gaurs city stadium,Greater Noida</p>
+                                            <p class="mb-0">Time: 07:00 PM</p>
+                                        </div>
+                                    </div>
+                                        <div class="score-container">
+                                            <p class="score">na/na</p>
+                                            <img src="./images/pare_warriors-removebg.png" alt="Team 1 Logo" class="team-logo">
+                                        </div>
+                                        <span class="vs-text">
+                                            <img src="./images/vs bg renmove.png" alt="VS Icon" class="vs-icon">
+                                        </span>
+                                        <div class="score-container">
+                                            <img src="./images/tawang new.png" alt="Team 2 Logo" class="team-logo">
+                                            <p class="score">na/na</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+  
+  <!--9th match -->
+          <div class="container mt-12">
+    <div class="d-flex flex-wrap justify-content-between">
+        <!-- Example of one card -->
+        <!-- Repeat this block 18 times to create all cards -->
+        <div class="card">
+            <div class="card-header">
+                <strong>9th Match (05 September, 2024)</strong>
+            </div>
+            <div class="card-body d-flex align-items-center">
+                <div class="info">
+                    <img src="./images/APL_LOGO.png" alt="APL Logo" class="main-logo">
+                    <div class="ml-3 text-left">
+                        <p class="mb-0">Venue: Gaurs city stadium,Greater Noida</p>
+                        <p class="mb-0">Time: 2:00 PM</p>
+                    </div>
+                </div>
+                    <div class="score-container">
+                        <p class="score">na/na</p>
+                        <img src="./images/kamle_cobras-removebg.png" alt="Team 1 Logo" class="team-logo">
+                    </div>
+                    <span class="vs-text">
+                        <img src="./images/vs bg renmove.png" alt="VS Icon" class="vs-icon">
+                    </span>
+                    <div class="score-container">
+                        <img src="./images/siang_sharks-removebg.png" alt="Team 2 Logo" class="team-logo">
+                        <p class="score">na/na</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+          </div>
+    <!---10 match -->
+         <div class="container mt-12">
+        <div class="d-flex flex-wrap justify-content-between">
+            <!-- Example of one card -->
+            <!-- Repeat this block 18 times to create all cards -->
+            <div class="card">
+                <div class="card-header">
+                    <strong>10th Match (05 September, 2024)</strong>
+                </div>
+                <div class="card-body d-flex align-items-center">
+                    <div class="info">
+                        <img src="./images/APL_LOGO.png" alt="APL Logo" class="main-logo">
+                        <div class="ml-3 text-left">
+                            <p class="mb-0">Venue: Gaurs city stadium,Greater Noida</p>
+                            <p class="mb-0">Time: 07:00 PM</p>
+                        </div>
+                    </div>
+                        <div class="score-container">
+                            <p class="score">na/na</p>
+                            <img src="./images/kamle_cobras-removebg.png" alt="Team 1 Logo" class="team-logo">
+                        </div>
+                        <span class="vs-text">
+                            <img src="./images/vs bg renmove.png" alt="VS Icon" class="vs-icon">
+                        </span>
+                        <div class="score-container">
+                            <img src="./images/siang_sharks-removebg.png" alt="Team 2 Logo" class="team-logo">
+                            <p class="score">na/na</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+          </div>
+  
+        <!--11match-->
+           <div class="container mt-12">
+            <div class="d-flex flex-wrap justify-content-between">
+                <!-- Example of one card -->
+                <!-- Repeat this block 18 times to create all cards -->
+                <div class="card">
+                    <div class="card-header">
+                        <strong>11th Match (06 September, 2024)</strong>
+                    </div>
+                    <div class="card-body d-flex align-items-center">
+                        <div class="info">
+                            <img src="./images/APL_LOGO.png" alt="APL Logo" class="main-logo">
+                            <div class="ml-3 text-left">
+                                <p class="mb-0">Venue: Gaurs city stadium,Greater Noida</p>
+                                <p class="mb-0">Time: 2:00 PM</p>
+                            </div>
+                        </div>
+                            <div class="score-container">
+                                <p class="score">na/na</p>
+                                <img src="./images/pare_warriors-removebg.png" alt="Team 1 Logo" class="team-logo">
+                            </div>
+                            <span class="vs-text">
+                                <img src="./images/vs bg renmove.png" alt="VS Icon" class="vs-icon">
+                            </span>
+                            <div class="score-container">
+                                <img src="./images/siang_sharks-removebg.png" alt="Team 2 Logo" class="team-logo">
+                                <p class="score">na/na</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+  
+            <!---12 match -->
+  
+            <div class="container mt-12">
+                <div class="d-flex flex-wrap justify-content-between">
+                    <!-- Example of one card -->
+                    <!-- Repeat this block 18 times to create all cards -->
+                    <div class="card">
+                        <div class="card-header">
+                            <strong>12th Match (0Se6 ptember, 2024)</strong>
+                        </div>
+                        <div class="card-body d-flex align-items-center">
+                            <div class="info">
+                                <img src="./images/APL_LOGO.png" alt="APL Logo" class="main-logo">
+                                <div class="ml-3 text-left">
+                                    <p class="mb-0">Venue: Gaurs city stadium,Greater Noida</p>
+                                    <p class="mb-0">Time: 07:00 PM</p>
+                                </div>
+                            </div>
+                                <div class="score-container">
+                                    <p class="score">na/na</p>
+                                    <img src="./images/Dirang_dragons_remove bg.png" alt="Team 1 Logo" class="team-logo">
+                                </div>
+                                <span class="vs-text">
+                                    <img src="./images/vs bg renmove.png" alt="VS Icon" class="vs-icon">
+                                </span>
+                                <div class="score-container">
+                                    <img src="./images/tawang new.png" alt="Team 2 Logo" class="team-logo">
+                                    <p class="score">na/na</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+  
+                <!--13 match-->
+  
+                <div class="container mt-12">
+                    <div class="d-flex flex-wrap justify-content-between">
+                        <!-- Example of one card -->
+                        <!-- Repeat this block 18 times to create all cards -->
+                        <div class="card">
+                            <div class="card-header">
+                                <strong>13th Match (07 September, 2024)</strong>
+                            </div>
+                            <div class="card-body d-flex align-items-center">
+                                <div class="info">
+                                    <img src="./images/APL_LOGO.png" alt="APL Logo" class="main-logo">
+                                    <div class="ml-3 text-left">
+                                        <p class="mb-0">Venue: Gaurs city stadium,Greater Noida</p>
+                                        <p class="mb-0">Time: 2:00 PM</p>
+                                    </div>
+                                </div>
+                                    <div class="score-container">
+                                        <p class="score">na/na</p>
+                                        <img src="./images/kamle_cobras-removebg.png" alt="Team 1 Logo" class="team-logo">
+                                    </div>
+                                    <span class="vs-text">
+                                        <img src="./images/vs bg renmove.png" alt="VS Icon" class="vs-icon">
+                                    </span>
+                                    <div class="score-container">
+                                        <img src="./images/tawang new.png" alt="Team 2 Logo" class="team-logo">
+                                        <p class="score">na/na</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                  </div>
+  
+                    <!--14 match-->
+                    <div class="container mt-12">
+                        <div class="d-flex flex-wrap justify-content-between">
+                            <!-- Example of one card -->
+                            <!-- Repeat this block 18 times to create all cards -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <strong>14th Match (07 September, 2024)</strong>
+                                </div>
+                                <div class="card-body d-flex align-items-center">
+                                    <div class="info">
+                                        <img src="./images/APL_LOGO.png" alt="APL Logo" class="main-logo">
+                                        <div class="ml-3 text-left">
+                                            <p class="mb-0">Venue: Gaurs city stadium,Greater Noida</p>
+                                            <p class="mb-0">Time: 07:00 PM</p>
+                                        </div>
+                                    </div>
+                                        <div class="score-container">
+                                            <p class="score">na/na</p>
+                                            <img src="./images/kameng_strikes-removebg.png" alt="Team 1 Logo" class="team-logo">
+                                        </div>
+                                        <span class="vs-text">
+                                            <img src="./images/vs bg renmove.png" alt="VS Icon" class="vs-icon">
+                                        </span>
+                                        <div class="score-container">
+                                            <img src="./images/siang_sharks-removebg.png" alt="Team 2 Logo" class="team-logo">
+                                            <p class="score">na/na</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                      </div>
+  
+                        <!---15 match-->
+         <div class="container mt-12">
+        <div class="d-flex flex-wrap justify-content-between">
+            <!-- Example of one card -->
+            <!-- Repeat this block 18 times to create all cards -->
+            <div class="card">
+                <div class="card-header">
+                    <strong>15th Match (08 September, 2024)</strong>
+                </div>
+                <div class="card-body d-flex align-items-center">
+                    <div class="info">
+                        <img src="./images/APL_LOGO.png" alt="APL Logo" class="main-logo">
+                        <div class="ml-3 text-left">
+                            <p class="mb-0">Venue: Gaurs city stadium,Greater Noida</p>
+                            <p class="mb-0">Time: 2:00 PM</p>
+                        </div>
+                    </div>
+                        <div class="score-container">
+                            <p class="score">na/na</p>
+                            <img src="./images/pare_warriors-removebg.png" alt="Team 1 Logo" class="team-logo">
+                        </div>
+                        <span class="vs-text">
+                            <img src="./images/vs bg renmove.png" alt="VS Icon" class="vs-icon">
+                        </span>
+                        <div class="score-container">
+                            <img src="./images/Dirang_dragons_remove bg.png" alt="Team 2 Logo" class="team-logo">
+                            <p class="score">na/na</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+           </div>
+        <!---16 match -->
+          <div class="container mt-12">
+            <div class="d-flex flex-wrap justify-content-between">
+                <!-- Example of one card -->
+                <!-- Repeat this block 18 times to create all cards -->
+                <div class="card">
+                    <div class="card-header">
+                        <strong>Semi-Final 1 (09 September, 2024)</strong>
+                    </div>
+                    <div class="card-body d-flex align-items-center">
+                        <div class="info">
+                            <img src="./images/APL_LOGO.png" alt="APL Logo" class="main-logo">
+                            <div class="ml-3 text-left">
+                                <p class="mb-0">Venue: Gaurs city stadium,Greater Noida</p>
+                                <p class="mb-0">Time: 2:00 PM</p>
+                            </div>
+                        </div>
+                            <div class="score-container">
+                                <p class="score">na/na</p>
+                                <img src="./images/kamle_cobras-removebg.png" alt="Team 1 Logo" class="team-logo">
+                            </div>
+                            <span class="vs-text">
+                                <img src="./images/vs bg renmove.png" alt="VS Icon" class="vs-icon">
+                            </span>
+                            <div class="score-container">
+                                <img src="./images/siang_sharks-removebg.png" alt="Team 2 Logo" class="team-logo">
+                                <p class="score">na/na</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <!---17 match -->
+            <div class="container mt-12">
+                <div class="d-flex flex-wrap justify-content-between">
+                    <!-- Example of one card -->
+                    <!-- Repeat this block 18 times to create all cards -->
+                    <div class="card">
+                        <div class="card-header">
+                            <strong>Semi-Final 2 (09 September, 2024)</strong>
+                        </div>
+                        <div class="card-body d-flex align-items-center">
+                            <div class="info">
+                                <img src="./images/APL_LOGO.png" alt="APL Logo" class="main-logo">
+                                <div class="ml-3 text-left">
+                                    <p class="mb-0">Venue: Gaurs city stadium,Greater Noida</p>
+                                    <p class="mb-0">Time: 07:00 PM</p>
+                                </div>
+                            </div>
+                                <div class="score-container">
+                                    <p class="score">na/na</p>
+                                    <img src="./images/kamle_cobras-removebg.png" alt="Team 1 Logo" class="team-logo">
+                                </div>
+                                <span class="vs-text">
+                                    <img src="./images/vs bg renmove.png" alt="VS Icon" class="vs-icon">
+                                </span>
+                                <div class="score-container">
+                                    <img src="./images/siang_sharks-removebg.png" alt="Team 2 Logo" class="team-logo">
+                                    <p class="score">na/na</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <!---18 match -->
+                <div class="container mt-12">
+                    <div class="d-flex flex-wrap justify-content-between">
+                        <!-- Example of one card -->
+                        <!-- Repeat this block 18 times to create all cards --> 
+                        <div class="card">
+                            <div class="card-header">
+                                <strong>Final (10 September, 2024)</strong>
+                            </div>
+                            <div class="card-body d-flex align-items-center">
+                                <div class="info">
+                                    <img src="./images/APL_LOGO.png" alt="APL Logo" class="main-logo">
+                                    <div class="ml-3 text-left">
+                                        <p class="mb-0">Venue: Gaurs city stadium,Greater Noida</p>
+                                        <p class="mb-0">Time: 07:00 PM</p>
+                                    </div>
+                                </div>
+                                    <div class="score-container">
+                                        <p class="score">na/na</p>
+                                        <img src="./images/kamle_cobras-removebg.png" alt="Team 1 Logo" class="team-logo">
+                                    </div>
+                                    <span class="vs-text">
+                                        <img src="./images/vs bg renmove.png" alt="VS Icon" class="vs-icon">
+                                    </span>
+                                    <div class="score-container">
+                                        <img src="./images/siang_sharks-removebg.png" alt="Team 2 Logo" class="team-logo">
+                                        <p class="score">na/na</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+  
+
+     
+
+        <!-- footer -->
+        <div class="container-fluids">
+          <div class="container-fluids footer">
+            <div class="container-fluids ">
+              <div class="d-flex justify-content-center align-items-center">
+                <img src="./images/organiserlogo.jpg" alt="Logo" class="logo img-fluid rounded-circle mt-2 me-3 max-height2" />
+                <div class="vertical-line mx-1"></div>
+                <img src="./images/APL_LOGO.png" alt="Logo" class="logo img-fluid me-3 mt-2" />
+              </div>
+            </div>
+            <div class="d-flex justify-content-center align-items-center social-media-icons m-4">
+              <span class="ms-3 p-2">
+                <a href="https://www.facebook.com/" target="_blank">
+                  <i class="fab fa-facebook iconsfb"></i>
+                </a>
+              </span>
+              <span class="ms-3">
+                <a href="https://www.linkedin.com/company/sportkavach/" target="_blank">
+                  <i class="fa-brands fa-square-instagram"></i>
+                </a>
+              </span>
+              <span class="ms-3">
+                <a href="https://twitter.com/" target="_blank">
+                  <i class="fa-brands fa-square-twitter"></i>
+                </a>
+              </span>
+              <span class="ms-3">
+                <a href="https://www.google.com/" target="_blank">
+                  <i class="fa-brands fa-square-youtube"></i>
+                </a>
+              </span>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <h1>QUICKLINKS</h1>
+                <div class="container">
+                  <ul>
+                    <li><a href="./index.html"><span class="px-2">&#x2B9E;</span>HOME</a></li>
+                    <li><a href="./about.html"><span class="px-2">&#x2B9E;</span>ABOUT US</a></li>
+                    <li><a href="./patner.html"><span class="px-2">&#x2B9E;</span>GALLERY</a></li>
+                    <li><a href="./earn.html"><span class="px-2">&#x2B9E;</span>TEAM</a></li>
+                    <li><a href="./faqs.html"><span class="px-2">&#x2B9E;</span>NEWS</a></li>
+                    <li><a href="./contact.html"><span class="px-2">&#x2B9E;</span>CONTACT US</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <h1>TEAMS</h1>
+                <div class="container">
+                  <ul>
+                    <li><a href="./index.html"><span class="px-2">&#x2B9E;</span>Dirang Dragens</a></li>
+                    <li><a href="./about.html"><span class="px-2">&#x2B9E;</span>Kamle Cobras</a></li>
+                    <li><a href="./patner.html"><span class="px-2">&#x2B9E;</span>Pare Warriors</a></li>
+                    <li><a href="./earn.html"><span class="px-2">&#x2B9E;</span>Siang</a></li>
+                    <li><a href="./faqs.html"><span class="px-2">&#x2B9E;</span>Tigers</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <h1>ABOUT US</h1>
+                <br>
+                <div class="container">
+                  <p>Season 02 of APL, 'The Reboot Edition,' elevates Arunachal cricket, offering players a platform for BCCI Domestic Season selection</p>
+                  <br>
+                  <p>Rebooted APL Season 02: Advancing Arunachal cricket, targeting BCCI selection</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <!-- Bottom Footer -->
+          <div class="container-fluid bottomfooter mb-1">
+            <span class="custom-bold text-center d-block" style="font-size: 1.5rem;">@&nbsp;2024Aplt20.live&nbsp; All Rights Reserved</span>
+          </div>
+      </div>  
+    </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <script>
+      var menuIcon = document.getElementById('manuIcon');
+
+      menuIcon.addEventListener('click', function() {
+        // Toggle between the menu icon and the cross icon
+        if (menuIcon.classList.contains('fa-stream')) {
+          menuIcon.classList.remove('fa-stream');
+          menuIcon.classList.add('fa-times');
+        } else {
+          menuIcon.classList.remove('fa-times');
+          menuIcon.classList.add('fa-stream');
+        }
+      });
+    </script>
+  </body>
+</html>
