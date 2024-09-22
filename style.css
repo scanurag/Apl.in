@@ -51,7 +51,8 @@
     }
 }
 .bottomfooter{
-    color:  #041b33;
+  background-color: #041b33;
+    color:  #ccc;
 }
 
 .custom-bold {
@@ -119,6 +120,11 @@
     object-fit: contain;
 }
 
+@media (min-width: 992px) { /* lg breakpoint */
+  .ml-lg-custom {
+      margin-left: 80px;
+  }
+}
 
 
 

@@ -15,39 +15,43 @@
     <link rel="stylesheet" href="style.css">
     <style>
        @keyframes cardEnter {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-.team-card {
-    background-color: #001f3f; /* Navy blue color */
-    color: #ffffff;
-    border: none;
-    border-radius: 15px;
-    overflow: hidden;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    width: 220px;
-    height: 220px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    box-shadow: 0 10px 20px rgba(36, 11, 72, 0.2);
-    opacity: 0; /* Initially hidden for animation */
-    transform: translateY(20px);
-    animation: cardEnter 1s forwards;
-    animation-delay: 0s; /* Default delay for the animation */
-}
+        .team-card {
+            background-color: #001f3f; /* Navy blue color */
+            color: #ffffff;
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            width: 100%; /* Let Bootstrap handle the width */
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(36, 11, 72, 0.2);
+            opacity: 0; /* Initially hidden for animation */
+            transform: translateY(20px);
+            animation: cardEnter 1s forwards;
+            animation-delay: 0s; /* Default delay for the animation */
+        }
 
-.team-card.animate {
-    animation: cardEnter 1s forwards;
-}
+        .team-card img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            background-color: #001f3f; /* Background color for visibility */
+            padding: 10px; /* Padding for better fit */
+        }
 
         body {
             background-color: white;
@@ -61,41 +65,6 @@
             margin-bottom: 40px;
             font-weight: bold;
             color: #02042e;
-        }
-        .team-card-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-        .team-card {
-            background-color: #001f3f; /* Navy blue color */
-            color: #ffffff;
-            border: none;
-            border-radius: 15px;
-            overflow: hidden;
-            transition: transform 1s ease, opacity 1s ease;
-            width: 220px;
-            height: 220px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            box-shadow: 0 10px 20px rgba(36, 11, 72, 0.2);
-        }
-        .team-card img {
-            max-width: 90%;
-            max-height: 90%;
-            object-fit: contain;
-            background-color: #001f3f; /* Background color for visibility */
-            padding: 10px; /* Padding for better fit */
-        }
-        .team-card-content {
-            position: relative;
-            z-index: 1;
-            color: #ffffff;
-            padding: 10px;
-            font-size: 1.5rem;
         }
         .hero-section {
             position: relative;
@@ -115,23 +84,7 @@
         .hero-section p {
             font-size: 1.25rem;
         }
-       
-        @keyframes curtainOpenLeft {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-100%);
-            }
-        }
-        @keyframes curtainOpenRight {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(100%);
-            }
-        }
+
         .highlights-section h3 {
             margin-bottom: 40px;
             font-weight: bold;
@@ -155,21 +108,6 @@
             background-color: #000;
         }
         @media (max-width: 768px) {
-            .team-card-container {
-                flex-direction: column;
-                align-items: center;
-            }
-            .team-card {
-                width: 80%;
-                height: 150px;
-                margin-bottom: 20px;
-            }
-            .hero-section {
-                padding: 30px 0;
-            }
-            .highlights-section {
-                padding: 30px 0;
-            }
             .highlight-container {
                 flex-direction: column;
                 align-items: center;
@@ -181,10 +119,6 @@
             }
         }
         @media (max-width: 480px) {
-            .team-card {
-                width: 90%;
-                height: 120px;
-            }
             .hero-section {
                 padding: 20px 0;
             }
@@ -195,6 +129,115 @@
                 width: 90%;
             }
         }
+
+        .demo-row {
+            background-color: #0a0530;
+            padding: 50px 0;
+        }
+
+        /* Implement */
+        .sponsor-feature {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 5px;
+            overflow: hidden;
+        }
+
+        .sponsor-feature img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        #id-sponsors .carousel {
+            margin-bottom: 20px;
+        }
+
+        #id-sponsors .carousel-indicators {
+            bottom: -25px;
+        }
+
+        /* Custom styles for carousel controls */
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: navy;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            background-image: none;
+        }
+
+        .carousel-control-prev-icon::before,
+        .carousel-control-next-icon::before {
+            font-size: 20px;
+            color: white;
+        }
+
+        .carousel-control-prev-icon {
+            background-image: url('data:image/svg+xml;charset=utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 8"><path fill="white" d="M4.707 7.707a1 1 0 0 0 0-1.414L2.414 4.5l2.293-2.293A1 1 0 1 0 3.293.293L.586 3a1 1 0 0 0 0 1.414l2.707 2.707A1 1 0 0 0 4.707 7.707z"/></svg>');
+        }
+
+        .carousel-control-next-icon {
+            background-image: url('data:image/svg+xml;charset=utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 8"><path fill="white" d="M3.293 7.707a1 1 0 0 1 0-1.414L5.586 4.5 3.293 2.207A1 1 0 0 1 4.707.293L7.414 3a1 1 0 0 1 0 1.414L4.707 7.707A1 1 0 0 1 3.293 7.707z"/></svg>');
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 576px) {
+            .sponsor-feature {
+                height: 120px;
+                width: 120px;
+            }
+
+            .carousel-control-prev-icon,
+            .carousel-control-next-icon {
+                width: 30px;
+                height: 30px;
+            }
+        }
+
+        @media (min-width: 576px) and (max-width: 768px) {
+            .sponsor-feature {
+                height: 150px;
+                width: 150px;
+            }
+
+            .carousel-control-prev-icon,
+            .carousel-control-next-icon {
+                width: 35px;
+                height: 35px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .sponsor-feature {
+                height: 180px;
+                width: 180px;
+            }
+
+            .carousel-control-prev-icon,
+            .carousel-control-next-icon {
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        .description {
+    background-color: #001f3f;
+    margin-top: 20px;
+   position: absolute;
+    color: white;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-weight: bolder;
+    /* Optional: Add a separator line at the top of the description */
+}
+
+
 
 
     </style>
@@ -219,12 +262,12 @@
                           <b class="text-white">Follow Us</b>
                       </span>
                       <span class="ms-3 p-2">
-                          <a href="https://www.facebook.com/" target="_blank">
+                          <a href="https://www.facebook.com/Arunachalca/" target="_blank">
                               <i class="fab fa-facebook iconsfb"></i>
                           </a>
                       </span>
                       <span class="ms-3">
-                          <a href="https://www.linkedin.com/company/sportkavach/" target="_blank">
+                          <a href="https://www.instagram.com/aplt20_arunachalpremierleague/" target="_blank">
                               <i class="fa-brands fa-square-instagram"></i>
                           </a>
                       </span>
@@ -234,7 +277,7 @@
                           </a>
                       </span>
                       <span class="ms-3">
-                          <a href="https://www.google.com/" target="_blank">
+                          <a href="https://www.youtube.com/embed/7Pm7O-wA1jw?si=eapZzM6WdWN2jWe8" target="_blank">
                               <i class="fa-brands fa-square-youtube"></i>
                           </a>
                       </span>
@@ -251,12 +294,14 @@
                           <b class="text-white">Follow Us At</b>
                       </span>
                       <span class="ms-3 p-2">
-                          <a href="https://www.facebook.com/" target="_blank">
+                          <a href="https://www.facebook.com/Arunachalca/
+                          " target="_blank">
                               <i class="fab fa-facebook iconsfb"></i>
                           </a>
                       </span>
                       <span class="ms-3">
-                          <a href="https://www.linkedin.com/company/sportkavach/" target="_blank">
+                          <a href="https://www.instagram.com/aplt20_arunachalpremierleague/
+                          " target="_blank">
                               <i class="fa-brands fa-square-instagram"></i>
                           </a>
                       </span>
@@ -266,7 +311,7 @@
                           </a>
                       </span>
                       <span class="ms-3">
-                          <a href="https://www.google.com/" target="_blank">
+                          <a href="https://www.youtube.com/embed/7Pm7O-wA1jw?si=eapZzM6WdWN2jWe8" target="_blank">
                               <i class="fa-brands fa-square-youtube"></i>
                           </a>
                       </span>
@@ -317,13 +362,13 @@
         <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
             <div class="carousel-inner">
               <div class="carousel-item active">
+                <img src="./images/banner4.gif" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
                 <img src="./images/bannerhead.jpg" class="d-block w-100" alt="...">
               </div>
               <div class="carousel-item">
                 <img src="./images/banner2.jpg" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="./images/apl123.gif" class="d-block w-100" alt="...">
               </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
@@ -354,41 +399,73 @@ second season of the Arunachal Premier League (APL). This highly anticipated cri
  
 ARCA has signed an MOU with JH sports industries to professionally manage the APL-2 as per the guidelines of the BCCI for such tournaments.
                 </p>
-                <button type="button" class="btn custom-btn">
-                    Read More
-                </button>
+                <a href="./about.html">
+                    <button type="button" class="btn custom-btn" >
+                        Read More
+                    </button>
+                </a>
             </div>
             <div class="col-sm-12 col-md-5">
-                <img src="./images/welcome_final.jpg" alt="" class="img-fluid">
+                <img src="./images/welcome_final.jpg" alt="" class="img-fluid ml-lg-custom " style="max-height: 400px;">
+            </div> 
+        </div>
+    </div>
+
+    <div class="container team-section text-center">
+        <h2 class="display-4">Our Teams</h2>
+        <!-- Team Cards -->
+        <div class="row" id="team-card-container">
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                <div class="team-card" id="card1">
+                    <img src="./images/Dirang_dragons_remove bg.png" alt="Dirang Dragons Logo">
+                    <div class="description">
+                        <p>THE SQUAD IS COMING SOON</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                <div class="team-card" id="card2">
+                    <img src="./images/pare_warriors-removebg.png" alt="Pare Warriors Logo">
+                    <div class="description">
+                        <p>THE SQUAD IS COMING SOON</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                <div class="team-card" id="card3">
+                    <img src="./images/kameng_strikes-removebg.png" alt="Kameng Strikes Logo">
+                    <div class="description">
+                        <p>THE SQUAD IS COMING SOON</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                <div class="team-card" id="card4">
+                    <img src="./images/siang_sharks-removebg.png" alt="Siang Sharks Logo">
+                    <div class="description">
+                        <p>THE SQUAD IS COMING SOON</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                <div class="team-card" id="card5">
+                    <img src="./images/kamle_cobras-removebg.png" alt="Kamle Cobras Logo">
+                    <div class="description">
+                        <p>THE SQUAD IS COMING SOON</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                <div class="team-card" id="card6">
+                    <img src="./images/tawang new.png" alt="Tawang Logo">
+                    <div class="description">
+                        <p>THE SQUAD IS COMING SOON</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-       <div class="container team-section text-center">
-        <h2 class="display-4">Our Teams</h2>
-        <!-- Team Cards -->
-        <div class="team-card-container" id="team-card-container">
-            <div class="team-card" id="card1">
-                <img src="./images/Dirang_dragons_remove bg.png" alt="Dirang Dragons Logo">
-            </div>
-            <div class="team-card" id="card2">
-                <img src="./images/pare_warriors-removebg.png" alt="Pare Warriors Logo">
-            </div>
-            <div class="team-card" id="card3">
-                <img src="./images/kameng_strikes-removebg.png" alt="Kameng Strikes Logo">
-            </div>
-            <div class="team-card" id="card4">
-                <img src="./images/siang_sharks-removebg.png" alt="Siang Sharks Logo">
-            </div>
-            <div class="team-card" id="card5">
-                <img src="./images/kamle_cobras-removebg.png" alt="Kamle Cobras Logo">
-            </div>
-            <div class="team-card" id="card6">
-                <img src="./images/tawang new.png" alt="Tawang Logo">
-            </div>
-        </div>
-      </div>
-  
     <div class="container hero-section">
         <h1>Season 2: #LeagueOfTalent</h1>
         <p>Join us as we showcase the most talented teams and players in Arunachal Premier League's exciting second season!</p>
@@ -396,41 +473,87 @@ ARCA has signed an MOU with JH sports industries to professionally manage the AP
     <div class="container highlights-section">
         <h3>Season Highlights</h3>
         <div class="highlight-container">
-
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="highlight-item">
-                        <iframe width="260" height="215" src="https://www.youtube.com/embed/-HdRRHhuppg?si=NSa4quZDpf1O59FT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        <p>Match 1 - Goal by Player 1</p>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="highlight-item">
-                        <iframe width="260" height="215" src="https://www.youtube.com/embed/g13PBRJqEGA?si=u7Ykw3Au6tHJuLGB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        <p>Match 2 - Stunning Save</p>
-                    </div>
-                </div>
+            <div class="highlight-item">
+                <iframe width="260" height="215" src="https://www.youtube.com/embed/-HdRRHhuppg?si=NSa4quZDpf1O59FT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <p>Match 1 - Goal by Player 1</p>
             </div>
-
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="highlight-item">
-                        <iframe width="260" height="215" src="https://www.youtube.com/embed/YiQ8DqS3_UI?si=gS8mAN2YSPQiylZO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        <p>Match 3 - Amazing Goal</p>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="highlight-item">
-                        <iframe width="260" height="215" src="https://www.youtube.com/embed/YiQ8DqS3_UI?si=gS8mAN2YSPQiylZO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        <p>Match 3 - Amazing Goal</p>
-                    </div>
-                </div>
+            <div class="highlight-item">
+                <iframe width="260" height="215" src="https://www.youtube.com/embed/g13PBRJqEGA?si=u7Ykw3Au6tHJuLGB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <p>Match 2 - Stunning Save</p>
             </div>
-            
+            <div class="highlight-item">
+                <iframe width="260" height="215" src="https://www.youtube.com/embed/YiQ8DqS3_UI?si=gS8mAN2YSPQiylZO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <p>Match 3 - Amazing Goal</p>
+            </div>
+            <div class="highlight-item">
+                <iframe width="260" height="215" src="https://www.youtube.com/embed/M35kraZzAs8?si=OcfGOQe7Uly4bnVD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <p>Match 4 - Final Victory</p>
+            </div>
         </div>
     </div>
       
-       
+     <div class="demo-row">
+      <div class="container" id="id-sponsors">
+          <div class="text-center">
+              <h2 style="margin:20px 0;color:#fff;"><u><b>Our Sponsors</b></u></h2>
+          </div>
+          <div id="sponsor-carousel" class="carousel slide" data-ride="carousel" data-interval="3000" data-pause="hover">
+              <!-- Indicators -->
+              <ol class="carousel-indicators">
+                  <li data-target="#sponsor-carousel" data-slide-to="0" class="active"></li>
+                  <li data-target="#sponsor-carousel" data-slide-to="1"></li>
+              </ol>
+              <!-- Wrapper for slides -->
+              <div class="carousel-inner" role="listbox">
+                  <div class="carousel-item active">
+                      <div class="d-flex justify-content-center">
+                          <div class="row">
+                              <div class="col-6 col-sm-3 d-flex justify-content-center">
+                                  <div class="sponsor-feature"><img alt="" src="./images/CricHeros.jpg" /></div>
+                              </div>
+                              <div class="col-6 col-sm-3 d-flex justify-content-center">
+                                  <div class="sponsor-feature"><img alt="" src="./images/fancodelogo.jpg" /></div>
+                              </div>
+                              <div class="col-6 col-sm-3 d-flex justify-content-center">
+                                  <div class="sponsor-feature"><img alt="" src="./images/soultatva.jpg" /></div>
+                              </div>
+                              <div class="col-6 col-sm-3 d-flex justify-content-center">
+                                  <div class="sponsor-feature"><img alt="" src="./images/SGIlogo.png" /></div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="carousel-item">
+                      <div class="d-flex justify-content-center">
+                          <div class="row">
+                              <div class="col-6 col-sm-3 d-flex justify-content-center">
+                                  <div class="sponsor-feature"><img alt="" src="./images/cropped-Artboaboardlogo.png"></div>
+                              </div>
+                              <div class="col-6 col-sm-3 d-flex justify-content-center">
+                                  <div class="sponsor-feature"><img alt="" src="./images/organiserlogo.jpg" /></div>
+                              </div>
+                              <div class="col-6 col-sm-3 d-flex justify-content-center">
+                                  <div class="sponsor-feature"><img alt="" src="./images/jhsportslogo.jpg" /></div>
+                              </div>
+                              <div class="col-6 col-sm-3 d-flex justify-content-center">
+                                  <div class="sponsor-feature"><img alt="" src="./images/fancodelogo.jpg" /></div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <!-- Controls -->
+              <a class="carousel-control-prev" href="#sponsor-carousel" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#sponsor-carousel" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+              </a>
+          </div>
+      </div>
+     </div>
 
         <!-- footer -->
         <div class="container-fluids">
@@ -444,12 +567,12 @@ ARCA has signed an MOU with JH sports industries to professionally manage the AP
               </div>
               <div class="d-flex justify-content-center align-items-center social-media-icons m-4">
                 <span class="ms-3 p-2">
-                  <a href="https://www.facebook.com/" target="_blank">
+                  <a href="https://www.facebook.com/Arunachalca/" target="_blank">
                     <i class="fab fa-facebook iconsfb"></i>
                   </a>
                 </span>
                 <span class="ms-3">
-                  <a href="https://www.linkedin.com/company/sportkavach/" target="_blank">
+                  <a href="https://www.instagram.com/aplt20_arunachalpremierleague/" target="_blank">
                     <i class="fa-brands fa-square-instagram"></i>
                   </a>
                 </span>
@@ -459,59 +582,87 @@ ARCA has signed an MOU with JH sports industries to professionally manage the AP
                   </a>
                 </span>
                 <span class="ms-3">
-                  <a href="https://www.google.com/" target="_blank">
+                  <a href="https://www.youtube.com/embed/7Pm7O-wA1jw?si=eapZzM6WdWN2jWe8" target="_blank">
                     <i class="fa-brands fa-square-youtube"></i>
                   </a>
                 </span>
               </div>
               <div class="row">
-                <div class="col-md-4">
-                  <h1>QUICKLINKS</h1>
+                <div class="col-md-4 mt-2">
+                  <h4 style="font-weight: 600; margin-left: 35px;">QUICKLINKS</h4>
                   <div class="container">
                     <ul>
                       <li><a href="./index.html"><span class="px-2">&#x2B9E;</span>HOME</a></li>
                       <li><a href="./about.html"><span class="px-2">&#x2B9E;</span>ABOUT US</a></li>
-                      <li><a href="./patner.html"><span class="px-2">&#x2B9E;</span>GALLERY</a></li>
-                      <li><a href="./earn.html"><span class="px-2">&#x2B9E;</span>TEAM</a></li>
-                      <li><a href="./faqs.html"><span class="px-2">&#x2B9E;</span>NEWS</a></li>
+                      <li><a href="./gallery.html"><span class="px-2">&#x2B9E;</span>GALLERY</a></li>
+                      <li><a href="./team.html"><span class="px-2">&#x2B9E;</span>TEAM</a></li>
+                      <li><a href="./news.html"><span class="px-2">&#x2B9E;</span>NEWS</a></li>
                       <li><a href="./contact.html"><span class="px-2">&#x2B9E;</span>CONTACT US</a></li>
                     </ul>
                   </div>
                 </div>
-                <div class="col-md-4">
-                  <h1>TEAMS</h1>
+                <div class="col-md-4 mt-3">
+                    <h4 style="font-weight: 600; margin-left: 35px;">TEAMS</h4>
                   <div class="container">
                     <ul>
-                      <li><a href="./index.html"><span class="px-2">&#x2B9E;</span>Dirang Dragens</a></li>
-                      <li><a href="./about.html"><span class="px-2">&#x2B9E;</span>Kamle Cobras</a></li>
-                      <li><a href="./patner.html"><span class="px-2">&#x2B9E;</span>Pare Warriors</a></li>
-                      <li><a href="./earn.html"><span class="px-2">&#x2B9E;</span>Siang</a></li>
-                      <li><a href="./faqs.html"><span class="px-2">&#x2B9E;</span>Tigers</a></li>
+                      <li><a href=""><span class="px-2">&#x2B9E;</span>Dirang Dragens</a></li>
+                      <li><a href=""><span class="px-2">&#x2B9E;</span>Kamle Cobras</a></li>
+                      <li><a href=""><span class="px-2">&#x2B9E;</span>Pare Warriors</a></li>
+                      <li><a href=""><span class="px-2">&#x2B9E;</span>Siang</a></li>
+                      <li><a href=""><span class="px-2">&#x2B9E;</span>Tigers</a></li>
                     </ul>
                   </div>
                 </div>
-                <div class="col-md-4">
-                  <h1>ABOUT US</h1>
+                <div class="col-md-4 mt-3">
+                    <h4 style="font-weight: 600; margin-left: 25px;">GET IN TOUCH</h4>
                   <br>
                   <div class="container">
-                    <p>Season 02 of APL, 'The Reboot Edition,' elevates Arunachal cricket, offering players a platform for BCCI Domestic Season selection.</p>
-                    <br>
-                    <p>Rebooted APL Season 02: Advancing Arunachal cricket, targeting BCCI selection</p>
+                    <ul>
+                        <li class="mb-2">
+                            <a href="#" class="text-white"><span class="me-2 ">
+                            <i class="fa-solid fa-address-card"></i>
+                              <a href="./contact.html" class="fs-6 contactInfo">Contact Us</a>
+                            </span></a>
+                        </li>
+                      
+                      <li>
+                        <a href="#" class="text-white"><span class="me-2">
+                          <i class="fas fa-phone-volume iconsfb"></i>
+                          <a href="tel:+918081182885" class="fs-6 contactInfo">+91 8299173654</a>
+                        </span></a>
+                        </li>
+                        <li class="mt-3">
+                          <a href="#" class="text-white"><span class="me-2">
+                            <i class="fas fa-envelope iconsfb"></i>
+                            <a href="mailto:info@SportsKavach.com" class="fs-6 contactInfo">Info@aplt20.live
+                            </a>
+                          </span></a>
+                          </li>
+                    </ul>
                   </div>
                 </div>
               </div>
             </div>
-            <hr>
-            <!-- Bottom Footer -->
+        
             <div class="container-fluid bottomfooter mb-1">
-              <span class="custom-bold text-center d-block" style="font-size: 1.5rem;">@&nbsp;2024Aplt20.live&nbsp; All Rights Reserved</span>
-            </div>
+                <span class="custom-bold text-center d-block" style="font-size: 1rem;">@&nbsp;2024Aplt20.live&nbsp; All Rights Reserved</span>
+                <div class="d-flex align-items-center justify-content-center">
+                  
+                  <span class="custom-bold text-center ms-2" style="font-size: 1rem;">Developed By</span>
+                  <img src="./images/noxetlogo.jpg" alt="" class="img-fluid max-height ms-2 rounded">
+                </div>
+              </div>
+            
         </div>  
     </div>
 
     <!-- Optional JavaScript; choose one of the two! -->
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 
     <script>
       var menuIcon = document.getElementById('manuIcon');
@@ -526,6 +677,15 @@ ARCA has signed an MOU with JH sports industries to professionally manage the AP
           menuIcon.classList.add('fa-stream');
         }
       });
+
+      $('#sponsor-carousel').carousel({
+            interval: 3000, // Slide every 3 seconds
+            wrap: true,     // Loop around from last to first
+            pause: false    // Don't pause on hover
+        });
+
+
+
     </script>
   </body>
 </html>

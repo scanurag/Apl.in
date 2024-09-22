@@ -4,7 +4,8 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>APL HOME PAGE</title>
+    <title>APL</title>
+    <link rel="icon" type="image/x-icon" href="./images/APL_LOGO1.png">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -15,39 +16,55 @@
     <link rel="stylesheet" href="style.css">
 
     <style>
-          @keyframes cardEnter {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+            @keyframes cardEnter {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-.team-card {
-    background-color: #001f3f; /* Navy blue color */
-    color: #ffffff;
-    border: none;
-    border-radius: 15px;
-    overflow: hidden;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    width: 220px;
-    height: 220px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+        .team-card {
+            background-color: #001f3f; /* Navy blue color */
+            color: #ffffff;
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            width: 100%; /* Let Bootstrap handle the width */
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(36, 11, 72, 0.2);
+            opacity: 0; /* Initially hidden for animation */
+            transform: translateY(20px);
+            animation: cardEnter 1s forwards;
+            animation-delay: 0s; /* Default delay for the animation */
+        }
+
+        .team-card img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            background-color: #001f3f; /* Background color for visibility */
+            padding: 10px; /* Padding for better fit */
+        }
+
+        .description {
+    background-color: #001f3f;
+    margin-top: 20px;
+   position: absolute;
+    color: white;
+    bottom: 0;
+    width: 100%;
     text-align: center;
-    box-shadow: 0 10px 20px rgba(36, 11, 72, 0.2);
-    opacity: 0; /* Initially hidden for animation */
-    transform: translateY(20px);
-    animation: cardEnter 1s forwards;
-    animation-delay: 0s; /* Default delay for the animation */
-}
-
-.team-card.animate {
-    animation: cardEnter 1s forwards;
+    font-weight: bolder;
+    /* Optional: Add a separator line at the top of the description */
 }
 
         body {
@@ -62,41 +79,6 @@
             margin-bottom: 40px;
             font-weight: bold;
             color: #02042e;
-        }
-        .team-card-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-        .team-card {
-            background-color: #001f3f; /* Navy blue color */
-            color: #ffffff;
-            border: none;
-            border-radius: 15px;
-            overflow: hidden;
-            transition: transform 1s ease, opacity 1s ease;
-            width: 220px;
-            height: 220px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            box-shadow: 0 10px 20px rgba(36, 11, 72, 0.2);
-        }
-        .team-card img {
-            max-width: 90%;
-            max-height: 90%;
-            object-fit: contain;
-            background-color: #001f3f; /* Background color for visibility */
-            padding: 10px; /* Padding for better fit */
-        }
-        .team-card-content {
-            position: relative;
-            z-index: 1;
-            color: #ffffff;
-            padding: 10px;
-            font-size: 1.5rem;
         }
         .hero-section {
             position: relative;
@@ -116,23 +98,7 @@
         .hero-section p {
             font-size: 1.25rem;
         }
-       
-        @keyframes curtainOpenLeft {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-100%);
-            }
-        }
-        @keyframes curtainOpenRight {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(100%);
-            }
-        }
+
         .highlights-section h3 {
             margin-bottom: 40px;
             font-weight: bold;
@@ -156,21 +122,6 @@
             background-color: #000;
         }
         @media (max-width: 768px) {
-            .team-card-container {
-                flex-direction: column;
-                align-items: center;
-            }
-            .team-card {
-                width: 80%;
-                height: 150px;
-                margin-bottom: 20px;
-            }
-            .hero-section {
-                padding: 30px 0;
-            }
-            .highlights-section {
-                padding: 30px 0;
-            }
             .highlight-container {
                 flex-direction: column;
                 align-items: center;
@@ -182,10 +133,6 @@
             }
         }
         @media (max-width: 480px) {
-            .team-card {
-                width: 90%;
-                height: 120px;
-            }
             .hero-section {
                 padding: 20px 0;
             }
@@ -218,12 +165,14 @@
                         <b class="text-white">Follow Us</b>
                     </span>
                     <span class="ms-3 p-2">
-                        <a href="https://www.facebook.com/" target="_blank">
+                        <a href="https://www.facebook.com/Arunachalca/
+                        " target="_blank">
                             <i class="fab fa-facebook iconsfb"></i>
                         </a>
                     </span>
                     <span class="ms-3">
-                        <a href="https://www.linkedin.com/company/sportkavach/" target="_blank">
+                        <a href="https://www.instagram.com/aplt20_arunachalpremierleague/
+                        " target="_blank">
                             <i class="fa-brands fa-square-instagram"></i>
                         </a>
                     </span>
@@ -233,7 +182,8 @@
                         </a>
                     </span>
                     <span class="ms-3">
-                        <a href="https://www.google.com/" target="_blank">
+                        <a href="https://www.youtube.com/embed/mQFrGjkDcW4?si=BGqG-CiEZJl9YPsI
+                        " target="_blank">
                             <i class="fa-brands fa-square-youtube"></i>
                         </a>
                     </span>
@@ -252,12 +202,14 @@
                           <b class="text-white">Follow Us At</b>
                       </span>
                       <span class="ms-3 p-2">
-                          <a href="https://www.facebook.com/" target="_blank">
+                          <a href="https://www.facebook.com/Arunachalca/
+                          " target="_blank">
                               <i class="fab fa-facebook iconsfb"></i>
                           </a>
                       </span>
                       <span class="ms-3">
-                          <a href="https://www.linkedin.com/company/sportkavach/" target="_blank">
+                          <a href="https://www.instagram.com/aplt20_arunachalpremierleague/
+                          " target="_blank">
                               <i class="fa-brands fa-square-instagram"></i>
                           </a>
                       </span>
@@ -267,7 +219,8 @@
                           </a>
                       </span>
                       <span class="ms-3">
-                          <a href="https://www.google.com/" target="_blank">
+                          <a href="https://www.youtube.com/embed/-HdRRHhuppg?si=NSa4quZDpf1O59FT
+                          " target="_blank">
                               <i class="fa-brands fa-square-youtube"></i>
                           </a>
                       </span>
@@ -318,28 +271,58 @@
         <div class="container team-section text-center">
             <h2 class="display-4">Our Teams</h2>
             <!-- Team Cards -->
-            <div class="team-card-container" id="team-card-container">
-                <div class="team-card" id="card1">
-                    <img src="./images/Dirang_dragons_remove bg.png" alt="Dirang Dragons Logo">
+            <div class="row" id="team-card-container">
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                    <div class="team-card" id="card1">
+                        <img src="./images/Dirang_dragons_remove bg.png" alt="Dirang Dragons Logo">
+                        <div class="description">
+                            <p>THE SQUAD IS COMING SOON</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="team-card" id="card2">
-                    <img src="./images/pare_warriors-removebg.png" alt="Pare Warriors Logo">
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                    <div class="team-card" id="card2">
+                        <img src="./images/pare_warriors-removebg.png" alt="Pare Warriors Logo">
+                        <div class="description">
+                            <p>THE SQUAD IS COMING SOON</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="team-card" id="card3">
-                    <img src="./images/kameng_strikes-removebg.png" alt="Kameng Strikes Logo">
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                    <div class="team-card" id="card3">
+                        <img src="./images/kameng_strikes-removebg.png" alt="Kameng Strikes Logo">
+                        <div class="description">
+                            <p>THE SQUAD IS COMING SOON</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="team-card" id="card4">
-                    <img src="./images/siang_sharks-removebg.png" alt="Siang Sharks Logo">
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                    <div class="team-card" id="card4">
+                        <img src="./images/siang_sharks-removebg.png" alt="Siang Sharks Logo">
+                        <div class="description">
+                            <p>THE SQUAD IS COMING SOON</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="team-card" id="card5">
-                    <img src="./images/kamle_cobras-removebg.png" alt="Kamle Cobras Logo">
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                    <div class="team-card" id="card5">
+                        <img src="./images/kamle_cobras-removebg.png" alt="Kamle Cobras Logo">
+                        <div class="description">
+                            <p>THE SQUAD IS COMING SOON</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="team-card" id="card6">
-                    <img src="./images/tawang new.png" alt="Tawang Logo">
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                    <div class="team-card" id="card6">
+                        <img src="./images/tawang new.png" alt="Tawang Logo">
+                        <div class="description">
+                            <p>THE SQUAD IS COMING SOON</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-          </div>
-      
+        </div>
+    
         <div class="container hero-section">
             <h1>Season 2: #LeagueOfTalent</h1>
             <p>Join us as we showcase the most talented teams and players in Arunachal Premier League's exciting second season!</p>
@@ -347,115 +330,127 @@
         <div class="container highlights-section">
             <h3>Season Highlights</h3>
             <div class="highlight-container">
-
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="highlight-item">
-                            <iframe width="260" height="215" src="https://www.youtube.com/embed/-HdRRHhuppg?si=NSa4quZDpf1O59FT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                            <p>Match 1 - Goal by Player 1</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="highlight-item">
-                            <iframe width="260" height="215" src="https://www.youtube.com/embed/g13PBRJqEGA?si=u7Ykw3Au6tHJuLGB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                            <p>Match 2 - Stunning Save</p>
-                        </div>
-                    </div>
+                <div class="highlight-item">
+                    <iframe width="260" height="215" src="https://www.youtube.com/embed/-HdRRHhuppg?si=NSa4quZDpf1O59FT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <p>Match 1 - Goal by Player 1</p>
                 </div>
-
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="highlight-item">
-                            <iframe width="260" height="215" src="https://www.youtube.com/embed/YiQ8DqS3_UI?si=gS8mAN2YSPQiylZO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                            <p>Match 3 - Amazing Goal</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="highlight-item">
-                            <iframe width="260" height="215" src="https://www.youtube.com/embed/YiQ8DqS3_UI?si=gS8mAN2YSPQiylZO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                            <p>Match 3 - Amazing Goal</p>
-                        </div>
-                    </div>
+                <div class="highlight-item">
+                    <iframe width="260" height="215" src="https://www.youtube.com/embed/g13PBRJqEGA?si=u7Ykw3Au6tHJuLGB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <p>Match 2 - Stunning Save</p>
                 </div>
-                
+                <div class="highlight-item">
+                    <iframe width="260" height="215" src="https://www.youtube.com/embed/YiQ8DqS3_UI?si=gS8mAN2YSPQiylZO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <p>Match 3 - Amazing Goal</p>
+                </div>
+                <div class="highlight-item">
+                    <iframe width="260" height="215" src="https://www.youtube.com/embed/M35kraZzAs8?si=OcfGOQe7Uly4bnVD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <p>Match 4 - Final Victory</p>
+                </div>
             </div>
         </div>
        
         <!-- footer -->
         <div class="container-fluids">
-          <div class="container-fluids footer">
-            <div class="container-fluids ">
-              <div class="d-flex justify-content-center align-items-center">
-                <img src="./images/organiserlogo.jpg" alt="Logo" class="logo img-fluid rounded-circle mt-2 me-3 max-height2" />
-                <div class="vertical-line mx-1"></div>
-                <img src="./images/APL_LOGO.png" alt="Logo" class="logo img-fluid me-3 mt-2" />
-              </div>
-            </div>
-            <div class="d-flex justify-content-center align-items-center social-media-icons m-4">
-              <span class="ms-3 p-2">
-                <a href="https://www.facebook.com/" target="_blank">
-                  <i class="fab fa-facebook iconsfb"></i>
-                </a>
-              </span>
-              <span class="ms-3">
-                <a href="https://www.linkedin.com/company/sportkavach/" target="_blank">
-                  <i class="fa-brands fa-square-instagram"></i>
-                </a>
-              </span>
-              <span class="ms-3">
-                <a href="https://twitter.com/" target="_blank">
-                  <i class="fa-brands fa-square-twitter"></i>
-                </a>
-              </span>
-              <span class="ms-3">
-                <a href="https://www.google.com/" target="_blank">
-                  <i class="fa-brands fa-square-youtube"></i>
-                </a>
-              </span>
-            </div>
-            <div class="row">
-              <div class="col-md-4">
-                <h1>QUICKLINKS</h1>
-                <div class="container">
-                  <ul>
-                    <li><a href="./index.html"><span class="px-2">&#x2B9E;</span>HOME</a></li>
-                    <li><a href="./about.html"><span class="px-2">&#x2B9E;</span>ABOUT US</a></li>
-                    <li><a href="./patner.html"><span class="px-2">&#x2B9E;</span>GALLERY</a></li>
-                    <li><a href="./earn.html"><span class="px-2">&#x2B9E;</span>TEAM</a></li>
-                    <li><a href="./faqs.html"><span class="px-2">&#x2B9E;</span>NEWS</a></li>
-                    <li><a href="./contact.html"><span class="px-2">&#x2B9E;</span>CONTACT US</a></li>
-                  </ul>
+            <div class="container-fluids footer">
+              <div class="container-fluids ">
+                <div class="d-flex justify-content-center align-items-center">
+                  <img src="./images/organiserlogo.jpg" alt="Logo" class="logo img-fluid rounded-circle mt-2 me-3 max-height2" />
+                  <div class="vertical-line mx-1"></div>
+                  <img src="./images/APL_LOGO.png" alt="Logo" class="logo img-fluid me-3 mt-2" />
                 </div>
               </div>
-              <div class="col-md-4">
-                <h1>TEAMS</h1>
-                <div class="container">
-                  <ul>
-                    <li><a href="./index.html"><span class="px-2">&#x2B9E;</span>Dirang Dragens</a></li>
-                    <li><a href="./about.html"><span class="px-2">&#x2B9E;</span>Kamle Cobras</a></li>
-                    <li><a href="./patner.html"><span class="px-2">&#x2B9E;</span>Pare Warriors</a></li>
-                    <li><a href="./earn.html"><span class="px-2">&#x2B9E;</span>Siang</a></li>
-                    <li><a href="./faqs.html"><span class="px-2">&#x2B9E;</span>Tigers</a></li>
-                  </ul>
-                </div>
+              <div class="d-flex justify-content-center align-items-center social-media-icons m-4">
+                <span class="ms-3 p-2">
+                  <a href="https://www.facebook.com/Arunachalca/
+                  " target="_blank">
+                    <i class="fab fa-facebook iconsfb"></i>
+                  </a>
+                </span>
+                <span class="ms-3">
+                  <a href="https://www.instagram.com/aplt20_arunachalpremierleague/
+                  " target="_blank">
+                    <i class="fa-brands fa-square-instagram"></i>
+                  </a>
+                </span>
+                <span class="ms-3">
+                  <a href="https://twitter.com/" target="_blank">
+                    <i class="fa-brands fa-square-twitter"></i>
+                  </a>
+                </span>
+                <span class="ms-3">
+                  <a href="https://www.youtube.com/embed/O27LN1tN1rM?si=GIi-d-vLXoHpF1vg
+                  " target="_blank">
+                    <i class="fa-brands fa-square-youtube"></i>
+                  </a>
+                </span>
               </div>
-              <div class="col-md-4">
-                <h1>ABOUT US</h1>
-                <br>
-                <div class="container">
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, aut!</p>
+              <div class="row">
+                <div class="col-md-4 mt-2">
+                  <h4 style="font-weight: 600; margin-left: 35px;">QUICKLINKS</h4>
+                  <div class="container">
+                    <ul>
+                      <li><a href="./index.html"><span class="px-2">&#x2B9E;</span>HOME</a></li>
+                      <li><a href="./about.html"><span class="px-2">&#x2B9E;</span>ABOUT US</a></li>
+                      <li><a href="./gallery.html"><span class="px-2">&#x2B9E;</span>GALLERY</a></li>
+                      <li><a href="./team.html"><span class="px-2">&#x2B9E;</span>TEAM</a></li>
+                      <li><a href="./news.html"><span class="px-2">&#x2B9E;</span>NEWS</a></li>
+                      <li><a href="./contact.html"><span class="px-2">&#x2B9E;</span>CONTACT US</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-md-4 mt-3">
+                    <h4 style="font-weight: 600; margin-left: 35px;">TEAMS</h4>
+                  <div class="container">
+                    <ul>
+                      <li><a href=""><span class="px-2">&#x2B9E;</span>Dirang Dragens</a></li>
+                      <li><a href=""><span class="px-2">&#x2B9E;</span>Kamle Cobras</a></li>
+                      <li><a href=""><span class="px-2">&#x2B9E;</span>Pare Warriors</a></li>
+                      <li><a href=""><span class="px-2">&#x2B9E;</span>Siang</a></li>
+                      <li><a href=""><span class="px-2">&#x2B9E;</span>Tigers</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-md-4 mt-3">
+                    <h4 style="font-weight: 600; margin-left: 25px;">GET IN TOUCH</h4>
                   <br>
-                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit, rem.</p>
+                  <div class="container">
+                    <ul>
+                        <li class="mb-2">
+                            <a href="#" class="text-white"><span class="me-2 ">
+                            <i class="fa-solid fa-address-card"></i>
+                              <a href="./contact.html" class="fs-6 contactInfo">Contact Us</a>
+                            </span></a>
+                        </li>
+                      
+                      <li>
+                        <a href="#" class="text-white"><span class="me-2">
+                          <i class="fas fa-phone-volume iconsfb"></i>
+                          <a href="tel:+918081182885" class="fs-6 contactInfo">+91 8299173654</a>
+                        </span></a>
+                        </li>
+                        <li class="mt-3">
+                          <a href="#" class="text-white"><span class="me-2">
+                            <i class="fas fa-envelope iconsfb"></i>
+                            <a href="mailto:info@SportsKavach.com" class="fs-6 contactInfo">Info@aplt20.live
+                            </a>
+                          </span></a>
+                          </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <hr>
-          <!-- Bottom Footer -->
-          <div class="container-fluid bottomfooter mb-1">
-            <span class="custom-bold text-center d-block" style="font-size: 1.5rem;">@&nbsp;2024Aplt20.live&nbsp; All Rights Reserved</span>
-          </div>
-      </div>   
+        
+            <div class="container-fluid bottomfooter mb-1">
+                <span class="custom-bold text-center d-block" style="font-size: 1rem;">@&nbsp;2024Aplt20.live&nbsp; All Rights Reserved</span>
+                <div class="d-flex align-items-center justify-content-center">
+                  
+                  <span class="custom-bold text-center ms-2" style="font-size: 1rem;">Developed By</span>
+                  <img src="./images/noxetlogo.jpg" alt="" class="img-fluid max-height ms-2 rounded">
+                </div>
+              </div>
+            
+        </div>   
     </div>
 
     <!-- Optional JavaScript; choose one of the two! -->
@@ -475,6 +470,18 @@
           menuIcon.classList.add('fa-stream');
         }
       });
+
+      document.addEventListener('DOMContentLoaded', function() {
+    const teamCards = document.querySelectorAll('.team-card');
+    if (teamCards.length > 0) {
+        teamCards.forEach((card, index) => {
+            card.style.animationDelay = `${index * 0.2}s`;
+            card.classList.add('card-loaded');
+        });
+    }
+});
+
+
     </script>
   </body>
 </html>
